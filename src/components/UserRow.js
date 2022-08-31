@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function UserRow(props) {
     return (
         <tr>
@@ -15,10 +16,6 @@ function UserRow(props) {
             <td>
                 {props.user.email}
             </td>
-            {/* <td>
-                {props.user.password}
-            </td> */}
-            
         </tr>
     )
 }

@@ -1,25 +1,18 @@
 import React from 'react';
 import TopBar from './TopBar';
-import ProductDetailFetch from './ProductDetailFetch';
-// import UserComp from './UserComp';
-// import ProductRankingFetch from './ProductRankingFetch';
-// import Product from './Product';
+import Product from './Product';
+
 import Footer from './Footer';
-function ContentWrapper(){
+function ContentWrapper() {
     return (
         <React.Fragment>
-            {/*<!-- Content Wrapper -->*/}
             <div id="content-wrapper" className="d-flex flex-column">
-                {/*<!-- Main Content -->*/}
                 <div id="content">
                     <TopBar />
-                    <ProductDetailFetch />
-                    {/* <UserComp /> */}
-                    {/* <ProductRankingFetch /> */}
-                    {/* <Product /> */}
+                    <Product />
                     <Footer />
                 </div>
-            </div>    
+            </div>
         </React.Fragment>
     )
 }
