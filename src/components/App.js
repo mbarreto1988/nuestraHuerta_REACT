@@ -4,7 +4,7 @@ import SideBar from './SideBar';
 import ContentWrapper from './ContentWrapper';
 import CategoriesInDb from './CategoriesInDb';
 import SectionsInDb from './SectionsInDb';
-import ProductListTable from './ProductListTable';
+import ProductFinal from './ProductFinal';
 import UserList from './UserList';
 import NotFound from './NotFound';
 
@@ -17,7 +17,8 @@ function App() {
           <Routes>
           <Route path='/' element={<ContentWrapper />}/>
           <Route path='/categories' element={<CategoriesInDb />} />
-          <Route path='/sections' element={<SectionsInDb />} />   
+          <Route path='/sections' element={<SectionsInDb />} /> 
+          <Route path='/products' element={<ProductFinal />} />  
           <Route path='/users' element={<UserList />} />
           <Route path="*" element={<NotFound />} />
           </Routes>

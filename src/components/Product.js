@@ -13,19 +13,40 @@ class Product extends React.Component {
         lastProductCreated: null,
         users: [],
         totalUsers: undefined,
+        // frutas: [],
+        // totalFrutas: undefined,
+        // verduras: [],
+        // totalVerduras: undefined,
+        // bolsones: [],
+        // totalBolsones: undefined,
+
     }
     async componentDidMount() {
         try {
             let productsfetch = await fetch('http://localhost:3003/api/products')
-            let usersfetch = await fetch('http://localhost:3003/api/users')
             let products = await productsfetch.json()
+            let usersfetch = await fetch('http://localhost:3003/api/users')
             let users = await usersfetch.json()
+            // let frutasfetch = await fetch('http://localhost:3003/api/categories')
+            // let frutas = await frutasfetch.json()
+            // let verdurasfetch = await fetch('http://localhost:3003/api/categories')
+            // let verduras = await verdurasfetch.json()
+            // let bolsonesfetch = await fetch('http://localhost:3003/api/categories')
+            // let bolsones = await bolsonesfetch.json()
+            
             this.setState({
                 products: products.data,
                 totalProducts: products.meta.total,
                 lastProductCreated: products.data[products.data.length - 1],
                 users: users.data,
-                totalUsers: users.meta.total
+                totalUsers: users.meta.total,
+                // frutas: frutas.data,
+                // totalFrutas: frutas.meta.total,
+                // verduras: verduras.data,
+                // totalVerduras: verduras.meta.total,
+                // bolsones: bolsones.data,
+                // totalBolsones: bolsones.meta.total
+
             })
 
         } catch (error) {
@@ -36,7 +57,7 @@ class Product extends React.Component {
 
 
     render() {
-        const { products, totalProducts, lastProductCreated, totalUsers } = this.state;
+        const { products, totalProducts, lastProductCreated, totalUsers, totalFrutas, totalBolsones, totalVerduras } = this.state;
         return (
             <React.Fragment>
                 <div className="container-fluid">
@@ -44,10 +65,10 @@ class Product extends React.Component {
                         <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
                     </div>
 
-                    <ContentRowTop totalProducts={totalProducts} totalUsers={totalUsers} />
+                    <ContentRowTop totalProducts={totalProducts} totalUsers={totalUsers} totalFrutas={totalFrutas} totalVerduras={totalVerduras} totalBolsones={totalBolsones}/>
 
                     <div className="row">
-                        <div className="col-lg-5 mb-7">
+                        <div className="col-lg-5 ml-7 mb-7">
                             <div className="card shadow mb-4">
                                 <div className="card-header py-1">
                                     <h4>Ultimo producto creado</h4>
@@ -68,12 +89,12 @@ class Product extends React.Component {
 
                     </div>
 
-                    <div className="card shadow mb-4">
+                    {/* <div className="card shadow mb-4">
                         <h1 className="h3 mb-2 text-gray-800">Productos en Base de Datos</h1>
                         <div className="card-body">
                             <ProductListTable products={products} />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </React.Fragment>

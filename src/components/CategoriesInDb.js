@@ -27,9 +27,9 @@ class CategoriesInDb extends React.Component {
         return (
             <React.Fragment>
                 {/*<!-- Categories in DB -->*/}
-                <div className="col-lg-6 mb-4">
-                    <div className="card shadow mb-4">
-                        <div className="card-header py-3">
+                <div className="col-lg-8 mb-4">
+                    <div className="card shadow mb-7">
+                        <div className="card-header mt-3 py-7">
                             <h6 onClick={this.handleMouseOver} className="m-0 font-weight-bold text-gray-800">Categorias en Base de Datos</h6>
                         </div>
                         <div className={`card-body ${this.state.overOnH6 && 'bg-secondary'}`}>

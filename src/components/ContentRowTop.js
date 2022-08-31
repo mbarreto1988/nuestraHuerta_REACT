@@ -2,25 +2,25 @@ import React from 'react';
 import SmallCard from './SmallCard';
 import PropTypes from 'prop-types';
 
-function ContentRowTop({ totalProducts, totalUsers }) {
+function ContentRowTop({ totalProducts, totalUsers, totalFrutas, totalVerduras, totalBolsones }) {
 	let frutas ={
 		color:   "success",
 		titulo: "Total frutas",
-		valor: 10,
+		valor: totalFrutas,
 		icono: "fas fa-fw fa-folder",
 	}
 	
 	let verduras = {
 		color:   "warning",
 		titulo: "Total verduras",
-		valor: 8,
+		valor: totalVerduras,
 		icono: "fas fa-fw fa-folder",
 	}
 	
 	let bolsones = {
 		color:   "primary",
 		titulo: "Total Bolsones",
-		valor: 2,
+		valor: totalBolsones,
 		icono: "fas fa-fw fa-folder",
 	}
 	
@@ -66,11 +66,17 @@ function ContentRowTop({ totalProducts, totalUsers }) {
 
 ContentRowTop.propTypes = {
 	totalProducts: PropTypes.number,
-	totalUsers: PropTypes.number
+	totalUsers: PropTypes.number,
+	totalFrutas: PropTypes.number,
+	totalVerduras: PropTypes.number,
+	totalBolsones: PropTypes.number,
 }
 
 ContentRowTop.defaultProps = {
 	totalProducts: 0,
-	totalUsers: 0
+	totalUsers: 0,
+	totalFrutas: 0,
+	totalVerduras: 0,
+	totalBolsones: 0,
 }
 export default ContentRowTop;

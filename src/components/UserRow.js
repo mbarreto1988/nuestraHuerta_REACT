@@ -16,6 +16,9 @@ function UserRow(props) {
             <td>
                 {props.user.email}
             </td>
+            <td>
+                {props.user.rol_id}
+            </td>
         </tr>
     )
 }

@@ -21,7 +21,7 @@ class UserList extends React.Component {
 
     render() {
         return (
-            <div className="col-lg-6 mb-4">
+            <div className="col-lg-10 mb-4">
                 <h1 className="h3 mb-2 text-gray-800">Usuarios en Base de Datos</h1>
                 <div className="card-body">
                     <div className="table-responsive">
@@ -32,6 +32,7 @@ class UserList extends React.Component {
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Email</th>
+                                    <th>Rol</th>
                                 </tr>
                             </thead>
                             <tfoot>
