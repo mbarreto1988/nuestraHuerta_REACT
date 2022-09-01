@@ -13,12 +13,12 @@ class Product extends React.Component {
         lastProductCreated: null,
         users: [],
         totalUsers: undefined,
-        // frutas: [],
-        // totalFrutas: undefined,
-        // verduras: [],
-        // totalVerduras: undefined,
-        // bolsones: [],
-        // totalBolsones: undefined,
+        frutas: [],
+        totalFrutas: undefined,
+        verduras: [],
+        totalVerduras: undefined,
+        bolsones: [],
+        totalBolsones: undefined,
 
     }
     async componentDidMount() {
@@ -27,12 +27,7 @@ class Product extends React.Component {
             let products = await productsfetch.json()
             let usersfetch = await fetch('http://localhost:3003/api/users')
             let users = await usersfetch.json()
-            // let frutasfetch = await fetch('http://localhost:3003/api/categories')
-            // let frutas = await frutasfetch.json()
-            // let verdurasfetch = await fetch('http://localhost:3003/api/categories')
-            // let verduras = await verdurasfetch.json()
-            // let bolsonesfetch = await fetch('http://localhost:3003/api/categories')
-            // let bolsones = await bolsonesfetch.json()
+            
             
             this.setState({
                 products: products.data,
@@ -40,12 +35,9 @@ class Product extends React.Component {
                 lastProductCreated: products.data[products.data.length - 1],
                 users: users.data,
                 totalUsers: users.meta.total,
-                // frutas: frutas.data,
-                // totalFrutas: frutas.meta.total,
-                // verduras: verduras.data,
-                // totalVerduras: verduras.meta.total,
-                // bolsones: bolsones.data,
-                // totalBolsones: bolsones.meta.total
+                totalFrutas: products.totals.frutas,
+                totalVerduras: products.totals.verduras,
+                totalBolsones: products.totals.bolsones
 
             })
 
